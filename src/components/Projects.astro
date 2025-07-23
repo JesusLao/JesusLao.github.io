@@ -1,0 +1,78 @@
+---
+import UnityIcon from "./icons/Unity.astro";
+import CSharpIcon from "./icons/CSharp.astro";
+import GithubIcon from "./icons/Github.astro";
+import LinkIcon from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+const TAGS = {
+    UNITY: {
+        name: "Unity",
+        class: "bg-black text-white",
+        icon: UnityIcon,
+    },
+    C: {
+        name: "C#",
+        class: "bg-black text-white",
+        icon: CSharpIcon,
+    },
+};
+const PROJECTS = [
+    {
+        title: "TVCode",
+        description:
+            "Videojuego educacional para enseñar estructuras de datos con ejemplos visuales y ejercicios con dificultad progresiva.",
+        link: "https://jesuslao-27.itch.io/tvcode",
+        github: "https://github.com/JesusLao/TFG-CodeTV",
+        image: "/projects/tvcode.webp",
+        tags: [TAGS.UNITY, TAGS.C],
+    },
+    {
+        title: "Walking Time",
+        description:
+            "Videojuego de aventuras en 2D con la finalidad de desarrollar el pensamiento computacional en niños",
+        link: "https://blurreddevs.itch.io/walking-time",
+        github: "https://github.com/blurredteam/Walking-Time",
+        image: "/projects/walking-time.webp",
+        tags: [TAGS.UNITY, TAGS.C],
+    },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+    {
+        PROJECTS.map(({ image, title, description, tags, link, github }) => (
+            <article>
+                <h3 class="text-2xl font-semibold text-orange-400 dark:text-yellow-200/90 mb-2">
+                    {title}
+                </h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex gap-x-2 flex-row mb-2">
+                    {tags.map((tag) => (
+                        <li>
+                            <span
+                                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                            >
+                                <tag.icon class="size-4" /> {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <img
+                    class="rounded-lg shadow-2xl shadow-white/10"
+                    src={image}
+                    alt={`Captura de pantalla del proyecto ${image}`}
+                />
+                <div class="mt-2 text-gray-700 dark:text-gray-400">
+                <footer class="flex items-end justify-start mt-4 gap-x-4">
+                    <LinkButton href={github}>
+                        <GithubIcon class="size-6 " /> Code
+                    </LinkButton>
+                    <LinkButton href={link}>
+                        <LinkIcon class="size-6" /> Website
+                    </LinkButton>
+                </footer>
+                </div>
+            </article>
+        ))
+    }
+</div>

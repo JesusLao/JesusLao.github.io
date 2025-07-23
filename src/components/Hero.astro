@@ -1,0 +1,55 @@
+---
+import { Picture } from "astro:assets";
+import Badge from "@/components/Badge.astro";
+import GithubIcon from "@/components/icons/Github.astro";
+import LinkedinIcon from "@/components/icons/Linkedin.astro";
+import logo from "../assets/logo1.png";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<div class="max-w-xl">
+	<div class="flex gap-4 mb-4 mt-40">
+		<Picture
+			src={logo}
+			formats={["avif", "webp"]}
+			alt="Logo of Jesús Gálvez Lao"
+			pictureAttributes={{
+				class: "inline-block overflow-hidden rounded-full shadow-lg h-25 w-25",
+			}}
+		/>
+		<a
+			href="https://www.linkedin.com/in/jesus-galvez-lao/"
+			target="_blank"
+			rel="noopener"
+			class="flex justify-center items-center hover:scale-105 transition"
+			><Badge>Abierto a ofertas de trabajo</Badge></a
+		>
+	</div>
+
+	<h1
+		class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+	>
+		Buenas, soy Jesús Gálvez Lao
+	</h1>
+
+	<p
+		class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-orange-400 [&>strong]:font-semibold lg:text-2xl dark:text-gray-300"
+	>
+		Estudiante egresado de Diseño y Desarrollo de Videojuegos.
+		<strong>Desarrollador Backend y de Videojuegos.</strong>
+		De Almería, España.
+	</p>
+
+	<nav class="flex flex-wrap gap-4 mt-8">
+		<SocialPill href="https://www.linkedin.com/in/jesus-galvez-lao/">
+			<LinkedinIcon class="size-4 lg:size-6" /> LinkedIn
+		</SocialPill>
+		<SocialPill href="https://github.com/JesusLao">
+			<GithubIcon class="size-4 lg:size-6" /> Github
+		</SocialPill>
+		<SocialPill href="mailto:galvezlaoj@gmail.com">
+			<MailIcon class="size-4 lg:size-6" /> galvezlaoj@gmail.com
+		</SocialPill>
+	</nav>
+</div>

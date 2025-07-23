@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Badge from "@/components/Badge.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import LinkedinIcon from "@/components/icons/Linkedin.astro";
+import "../styles/global.css";
+---
+
+<Layout
+    title="Design System portfolio.dev"
+    description="Catálogo de componentes del portfolio de Jesús Gálvez Lao"
+>
+    <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
+        <article class="mb-10">
+            <h1 class="mb-4 text-xl font-semibold">&lt;Badge /&gt;</h1>
+            <Badge> Tailwind </Badge>
+            <Badge> Tailwind </Badge>
+        </article>
+        <article class="mb-10">
+            <div class="flex">
+                <h1 class="mb-4 text-xl font-semibold">&lt;SocialPill /&gt;</h1>
+                <SocialPill
+                    href="https://www.linkedin.com/in/jesus-galvez-lao/"
+                    class="bg-blue-600"
+                >
+                    <LinkedinIcon class="size-4 md:size-6">
+                        Linkedin
+                    </LinkedinIcon>
+                </SocialPill>
+            </div>
+        </article>
+    </SectionContainer>
+</Layout>
