@@ -18,17 +18,12 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/projects/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ClientRouter />
 	</head>
 	<body class="relative text-black dark:text-white">
-		<!-- <div
-			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full items-center px-5 py-24 [background:radial-gradient(175%_125%_at_50%_100%,#111111e6_30%,#5e14a9_100%)]"
-		>
-		</div> -->
-
 		<div
 			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(197,196,235,0.5),rgba(235,235,235,0.9))]

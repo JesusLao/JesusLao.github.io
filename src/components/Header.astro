@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import ThemeIcon from './ThemeIcon.astro';
 import "@/styles/global.css";
 
 const navItems = [
@@ -29,15 +30,13 @@ const navItems = [
 <header
     class={"fixed top-0 z-10 flex justify-center items-center w-full mx-auto mt-2"}
 >
-    <!-- <img src={logo.src} alt="Logo" class="rounded-full h-12 w-12" /> -->
-
     <nav
-        class={"border border-black rounded-full px-3 py-1 flex flex-row items-center bg-neutral-200 dark:bg-black/50 backdrop-blur-2xl"}
+        class={"flex px-3 text-sm font-medium border border-black rounded-full justify-center items-center bg-neutral-200 dark:bg-black/50 backdrop-blur-2xl"}
     >
         {
             navItems.map((link) => (
                 <a
-                    class="relative block px-2 py-2 transition hover:text-orange-400 dark:hover:text-yellow-400 dark:text-gray-200 justify-center items-center"
+                    class="relative block px-2 py-2 transition hover:text-orange-400 dark:hover:text-yellow-400 dark:text-gray-200"
                     aria-label={link.label}
                     href={link.url}
                 >
@@ -45,7 +44,7 @@ const navItems = [
                 </a>
             ))
         }
-        <ThemeToggle />
+        <!-- <ThemeToggle /> -->
     </nav>
 </header>
 
